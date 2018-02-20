@@ -37,7 +37,7 @@
     "quant-beat": "0.0.18",
     "quantal-errors": "^0.0.12",
     "quantal-nodejs-shared": "0.0.38",
-    "qute-bookshelf-repository": "^0.0.1",
+    "qute-bookshelf-repository": "0.0.2",
     "urlencode": "^1.1.0"
   },
   "devDependencies": {
