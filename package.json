@@ -9,7 +9,7 @@
     "start": "npm run migrations && node index",
     "migrations": "node_modules/knex/bin/cli.js migrate:latest",
     "test": "NODE_ENV=test node_modules/mocha/bin/mocha test/**/*tests.js  ",
-    "build": "node node_modules/babel-cli/bin/babel lib --out-dir dist",
+    "build": "node node_modules/babel-cli/bin/babel app --out-dir dist",
     "prepublish": "npm run build"
   },
   "standard": {
@@ -36,7 +36,7 @@
     "pg": "^6.1.4",
     "quant-beat": "0.0.19",
     "quantal-errors": "^0.0.12",
-    "quantal-nodejs-shared": "0.0.38",
+    "quantal-nodejs-shared": "0.0.40",
     "qute-bookshelf-repository": "0.0.2",
     "urlencode": "^1.1.0"
   },
