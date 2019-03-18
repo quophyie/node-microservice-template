@@ -1,8 +1,9 @@
-version: '2'
+version: '3'
 networks:
   default:
     external:
       name: compose_container_services_networks
+
 services:
 
   node_micrososervice:
@@ -10,11 +11,11 @@ services:
       context: ./../../
       dockerfile: ./docker/Dockerfile
     ports:
-      - "4000:3000"
-      - "5015:5015"
+      - ${WEB_APP_PORT:-4000}:3000
     environment:
       - DB_HOST=node_micrososervice_db
       - DB_PORT=5432
+      - LOGZIO_TOKEN=${LOGZIO_TOKEN}
       - JWT_SECRET=${JWT_SECRET}
       - PASSWORD_SALT=${PASSWORD_SALT}
       - JWT_TYPE=${JWT_TYPE}
@@ -24,19 +25,16 @@ services:
       - node_micrososervice_db
     depends_on:
       - node_micrososervice_db
-    command: ["/wait-for-it.sh", "quantal_auth_db:5432", "--","npm","--prefix", "/opt/app/", "start"]
+    command: ["/wait-for-it.sh", "node_micrososervice_db:5432", "--","npm","--prefix", "/opt/app/", "start"]
     volumes:
       - /private/var/docker/log/node_micrososervice_db:/var/log
-
-    #networks:
-     # - container_services_networks
 
   # The postgres database
   node_micrososervice_db:
     restart: always
     image: sameersbn/postgresql:9.6-2
     ports:
-      - "5435:5432"
+      - ${DB_PORT_EXPOSED_ON_HOST:-5435}:5432
     environment:
       - DEBUG=false
       - DB_USER=postgres
