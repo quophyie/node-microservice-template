@@ -25,7 +25,7 @@ services:
       - node_micrososervice_db
     depends_on:
       - node_micrososervice_db
-    command: ["/wait-for-it.sh", "node_micrososervice_db:5432", "--","npm","--prefix", "/opt/app/", "start"]
+    command: ["/wait-for-it.sh", "-t", "30", "node_micrososervice_db:5432", "--","npm","--prefix", "/opt/app/", "start"]
     volumes:
       - /private/var/docker/log/node_micrososervice_db:/var/log
 
