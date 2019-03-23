@@ -6,10 +6,12 @@
     "node": ">=6.0.0 "
   },
   "scripts": {
-    "start": "npm run migrations && node index",
+    "start": "npm run migrations && npm run seed && node dist/index",
+    "seed": "node_modules/knex/bin/cli.js seed:run",
     "migrations": "node_modules/knex/bin/cli.js migrate:latest",
-    "test": "NODE_ENV=test node_modules/mocha/bin/mocha test/**/*tests.js  ",
-    "build": "node node_modules/babel-cli/bin/babel app --out-dir dist",
+    "test": "npm run build && NODE_ENV=development node_modules/mocha/bin/mocha dist/test/**/*tests.js  ",
+    "build": "rm -rvf ./dist && mkdir -p ./dist && node node_modules/babel-cli/bin/babel ./ --out-dir ./dist --ignore ./node_modules, ./dist",
+    "build_tests": "npm run build && node node_modules/babel-cli/bin/babel test --out-dir dist/test --ignore node_modules, dist",
     "prepublish": "npm run build"
   },
   "standard": {
@@ -34,9 +36,9 @@
     "lodash": "^4.17.4",
     "morgan": "~1.7.0",
     "pg": "^6.1.4",
-    "quant-beat": "0.0.19",
+    "quant-beat": "0.0.28",
     "quantal-errors": "^0.0.12",
-    "quantal-nodejs-shared": "0.0.46",
+    "quantal-nodejs-shared": "0.0.57",
     "qute-bookshelf-repository": "0.0.2",
     "urlencode": "^1.1.0"
   },
