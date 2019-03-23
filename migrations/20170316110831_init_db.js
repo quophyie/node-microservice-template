@@ -17,7 +17,7 @@ exports.up = function (knex, Promise) {
     }),
     knex.schema.createTableIfNotExists('giphys', (table) => {
       table.increments('giphy_id')
-      table.string('query').unique()
+      table.string('query')
       table.string('url')
       // table.timestamps()
       table.timestamps(true, true)
