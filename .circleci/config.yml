@@ -27,10 +27,10 @@ jobs:
             - node_modules
           key: node-microservice-template-v1-dependencies-{{ checksum "package.json" }}
 
-        - run:
+      - run:
           command: npm run build
 
-        - run:
+      - run:
           command: npm run test
           environment:
             LOGZIO_TOKEN: logzio_token
