@@ -3217,9 +3217,9 @@ qs@6.4.0, qs@^6.1.0, qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
-quant-beat@0.0.29:
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/quant-beat/-/quant-beat-0.0.29.tgz#f47572550517cedb14c1d8a80d99e06fb5836e6d"
+quant-beat@0.0.31:
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/quant-beat/-/quant-beat-0.0.31.tgz#80d0738634bf1cdba1b8a228abcd2bf04c3d076d"
   dependencies:
     app-root-path "^2.0.1"
     aspect.js "^0.5.1"
@@ -3281,9 +3281,9 @@ quantal-errors@^0.0.5:
     lodash "^4.13.0"
     request-promise "^4.2.0"
 
-quantal-nodejs-shared@0.0.58:
-  version "0.0.58"
-  resolved "https://registry.yarnpkg.com/quantal-nodejs-shared/-/quantal-nodejs-shared-0.0.58.tgz#029a48ad9e471bea66493918a64048469674fa3c"
+quantal-nodejs-shared@0.0.64:
+  version "0.0.64"
+  resolved "https://registry.yarnpkg.com/quantal-nodejs-shared/-/quantal-nodejs-shared-0.0.64.tgz#84702ae4f8dfb9e4ae56aef95094dba218ca60a9"
   dependencies:
     add "^2.0.6"
     app-root-path "^2.0.1"

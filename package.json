@@ -36,9 +36,9 @@
     "lodash": "^4.17.4",
     "morgan": "~1.7.0",
     "pg": "^6.1.4",
-    "quant-beat": "0.0.29",
+    "quant-beat": "0.0.31",
     "quantal-errors": "^0.0.12",
-    "quantal-nodejs-shared": "0.0.58",
+    "quantal-nodejs-shared": "0.0.64",
     "qute-bookshelf-repository": "0.0.2",
     "urlencode": "^1.1.0"
   },
