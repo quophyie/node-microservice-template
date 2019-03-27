@@ -20,7 +20,7 @@ services:
       - PASSWORD_SALT=${PASSWORD_SALT}
       - JWT_TYPE=${JWT_TYPE}
       - JWT_ALGORITHM=${JWT_ALGORITHM}
-      - API_GATEWAY_ENDPOINT=${API_GATEWAY_ENDPOINT}
+      - API_GATEWAY_ENDPOINT=${API_GATEWAY_ENDPOINT:-http://kong:8001}
     links:
       - node_micrososervice_db
     depends_on:
